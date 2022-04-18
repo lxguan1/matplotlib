@@ -7729,7 +7729,7 @@ def test_bezier_autoscale():
     # the control point (at -1)
     assert ax.get_ylim()[0] == -0.5
 
-@check_figures_equal(extension=[".png"])
+@check_figures_equal(extensions=[".png"])
 def test_polar_sector_set_yticklabels(fig_test, fig_ref):
     """
     Test that set_yticklabels works on polar axes confined to sectors
@@ -7751,7 +7751,7 @@ def test_polar_sector_set_yticklabels(fig_test, fig_ref):
     ax2.set_yticklabels(np.arange(-45,46,15))
     ax2.yaxis.set_tick_params(labelsize='xx-large')
 
-@check_figures_equal(extension=[".png"])
+@check_figures_equal(extensions=[".png"])
 def test_polar_circle_set_yticklabels(fig_test, fig_ref):
     """
     Test that set_yticklabels works on polar axes that are circles
