@@ -1859,11 +1859,18 @@ class Axis(martist.Artist):
             self.set_minor_formatter(formatter)
             locs = self.get_minorticklocs()
             ticks = self.get_minor_ticks(len(locs))
+            which = 'minor'
         else:
             self.set_major_formatter(formatter)
             locs = self.get_majorticklocs()
             ticks = self.get_major_ticks(len(locs))
+            which = 'major'
 
+        # The fontsize is stored so that any future new ticks will
+        # automatically get it
+        if 'fontsize' in kwargs:
+            self.set_tick_params(which=which, labelsize=kwargs['fontsize'])
+            
         ret = []
         for pos, (loc, tick) in enumerate(zip(locs, ticks)):
             tick.update_position(loc)
