@@ -1870,7 +1870,7 @@ class Axis(martist.Artist):
         # automatically get it
         if 'fontsize' in kwargs:
             self.set_tick_params(which=which, labelsize=kwargs['fontsize'])
-            
+
         ret = []
         for pos, (loc, tick) in enumerate(zip(locs, ticks)):
             tick.update_position(loc)
