@@ -228,6 +228,10 @@ jobs:
           rm -rf ~/.cache/matplotlib
         if: matrix.delete-font-cache
 
+      - name: Lint with flake8
+        run: |
+            pip install flake8-docstrings
+            flake8 --docstring-convention=all
       - name: Run pytest
         run: |
           ${{ matrix.XVFB_RUN }} python -mpytest -raR -n auto \
