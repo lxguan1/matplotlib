@@ -7729,6 +7729,7 @@ def test_bezier_autoscale():
     # the control point (at -1)
     assert ax.get_ylim()[0] == -0.5
 
+    
 @check_figures_equal(extensions=[".png"])
 def test_polar_sector_set_yticklabels(fig_test, fig_ref):
     """
@@ -7738,19 +7739,20 @@ def test_polar_sector_set_yticklabels(fig_test, fig_ref):
         set_yticklabels(labels, fontsize='xx-large')
         set_yticklables(labels); set_tick_params(labelsize='xx-large')
     """
-    ax1 = fig_test.add_subplot(111,polar=True)
+    ax1 = fig_test.add_subplot(111, polar=True)
     ax1.set_thetamin(-45)
     ax1.set_thetamax(45)
-    ax1.set_yticks(np.arange(-45,46,15))
-    ax1.set_yticklabels(np.arange(-45,46,15), fontsize='xx-large')
+    ax1.set_yticks(np.arange(-45, 46, 15))
+    ax1.set_yticklabels(np.arange(-45, 46, 15), fontsize='xx-large')
 
     ax2 = fig_ref.add_subplot(111,polar=True)
     ax2.set_thetamin(-45)
     ax2.set_thetamax(45)
-    ax2.set_yticks(np.arange(-45,46,15))
-    ax2.set_yticklabels(np.arange(-45,46,15))
+    ax2.set_yticks(np.arange(-45, 46, 15))
+    ax2.set_yticklabels(np.arange(-45, 46, 15))
     ax2.yaxis.set_tick_params(labelsize='xx-large')
 
+    
 @check_figures_equal(extensions=[".png"])
 def test_polar_circle_set_yticklabels(fig_test, fig_ref):
     """
@@ -7760,29 +7762,30 @@ def test_polar_circle_set_yticklabels(fig_test, fig_ref):
         set_yticklabels(labels, fontsize='xx-large')
         set_yticklables(labels); set_tick_params(labelsize='xx-large')
     """
-    ax1 = fig_test.add_subplot(111,polar=True)
+    ax1 = fig_test.add_subplot(111, polar=True)
     ax1.set_thetamin(0)
     ax1.set_thetamax(360)
-    ax1.set_yticks(np.arange(-45,46,15))
-    ax1.set_yticklabels(np.arange(-45,46,15), fontsize='xx-large')
+    ax1.set_yticks(np.arange(-45, 46, 15))
+    ax1.set_yticklabels(np.arange(-45, 46, 15), fontsize='xx-large')
 
-    ax2 = fig_ref.add_subplot(111,polar=True)
+    ax2 = fig_ref.add_subplot(111, polar=True)
     ax2.set_thetamin(0)
     ax2.set_thetamax(360)
-    ax2.set_yticks(np.arange(-45,46,15))
-    ax2.set_yticklabels(np.arange(-45,46,15))
+    ax2.set_yticks(np.arange(-45, 46, 15))
+    ax2.set_yticklabels(np.arange(-45, 46, 15))
     ax2.yaxis.set_tick_params(labelsize='xx-large')
 
+    
 def test_polar_kw_set_yticklabels():
     """
     Test that set_yticklabels on polar axes sets _major_tick_kw
     """
-    fig = plt.figure(figsize=(6,6))
-    ax1 = fig.add_subplot(111,polar=True)
+    fig = plt.figure(figsize=(6, 6))
+    ax1 = fig.add_subplot(111, polar=True)
     ax1.set_thetamin(-45)
     ax1.set_thetamax(45)
-    ax1.set_yticks(np.arange(-45,46,15))
-    ax1.set_yticklabels(np.arange(-45,46,15), fontsize='xx-large')
+    ax1.set_yticks(np.arange(-45, 46, 15))
+    ax1.set_yticklabels(np.arange(-45, 46, 15), fontsize='xx-large')
     major_tick_kw = ax1.get_yaxis()._major_tick_kw
     assert 'labelsize' in major_tick_kw
     assert major_tick_kw['labelsize'] == 'xx-large'
